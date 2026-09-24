@@ -1,240 +1,140 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ali Games - List PS3 404 Game</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ali Games - 404 Game - FIX 2 Jadi 404</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#07070b;color:#fff;font-family:system-ui,sans-serif}
-.hero{width:100%;height:320px;overflow:hidden;position:relative;background:#000}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.1) 100%);display:flex;align-items:center;padding:0 24px}
-.hero-text h1{font-size:36px;font-weight:900;letter-spacing:1px;color:#9aa0a6;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
-.hero-text p{color:#7a7f85;font-size:14px;margin-top:6px}
-.topbar{background:#12121a;border-bottom:1px solid #222;padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font-size:13px}
-.topbar a{background:#25D366;color:#000;font-weight:800;padding:8px 14px;border-radius:8px;text-decoration:none}
-.controls{padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;background:#0f0f14;position:sticky;top:0;z-index:10;border-bottom:1px solid #222}
-.controls input{flex:1;min-width:180px;background:#1a1a24;border:1px solid #333;color:#fff;padding:10px 12px;border-radius:8px}
-.controls select{background:#1a1a24;border:1px solid #333;color:#fff;padding:10px;border-radius:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:16px}
-.card{background:#12121a;border:1px solid #23232f;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.cover-wrap{aspect-ratio:3/4;background:#0a0a0f;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.cover-wrap img{width:100%;height:100%;object-fit:contain;background:#0a0a0f}
-.badge-id{position:absolute;top:6px;left:6px;background:rgba(59,130,246,0.9);color:#fff;font-size:10px;font-family:monospace;padding:3px 6px;border-radius:4px}
-.info{padding:8px}
-.info h3{font-size:12px;line-height:1.3;height:32px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.info .genre{font-size:10px;color:#888;margin-top:4px}
-.info button{margin-top:8px;width:100%;background:#fff;color:#000;font-weight:700;border:0;padding:8px;border-radius:8px;cursor:pointer;font-size:12px}
-.info button.added{background:#25D366}
-.pagin{display:flex;gap:6px;justify-content:center;padding:12px;flex-wrap:wrap}
-.pagin button{background:#1a1a24;border:1px solid #333;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
-.pagin button.active{background:#fff;color:#000}
-#orderDrawer{position:fixed;right:0;top:0;bottom:0;width:360px;max-width:90vw;background:#11111a;border-left:1px solid #333;transform:translateX(100%);transition:0.3s;z-index:50;display:flex;flex-direction:column}
-#orderDrawer.open{transform:translateX(0)}
-.drawer-head{padding:16px;border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center}
-.drawer-list{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
-.drawer-item{background:#1a1a24;border:1px solid #2a2a3a;padding:8px;border-radius:8px;font-size:12px;display:flex;justify-content:space-between;gap:8px}
-.drawer-foot{padding:12px;border-top:1px solid #222;display:flex;flex-direction:column;gap:8px}
-.drawer-foot a, .drawer-foot button{padding:12px;border-radius:8px;text-align:center;font-weight:800;text-decoration:none;border:0;cursor:pointer}
-.btn-wa{background:#25D366;color:#000}
-.btn-copy{background:#333;color:#fff}
-.btn-clear{background:#1a1a24;color:#888;border:1px solid #333 !important}
-.fab{position:fixed;bottom:16px;right:16px;background:#25D366;color:#000;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.4);z-index:40}
-@media(max-width:600px){.hero{height:200px}.hero-text h1{font-size:24px}}
+body{background:#0a0a0f;color:#fff;font-family:Arial,sans-serif}
+.header{background:#000;padding:12px 16px;border-bottom:2px solid #25D366;display:flex;gap:12px;align-items:center}
+.header h1{font-size:16px}.header p{font-size:10px;color:#888}
+.bar{background:#12121a;padding:8px 12px;font-size:11px;color:#ccc;border-bottom:1px solid #222;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.bar b{color:#fff}
+.search{padding:10px;background:#0f0f14;position:sticky;top:0;z-index:20;border-bottom:1px solid #222;display:flex;gap:8px;flex-wrap:wrap}
+.search input{flex:1;min-width:160px;padding:10px;border-radius:8px;border:1px solid #333;background:#1a1a24;color:#fff}
+.search select{padding:10px;border-radius:8px;border:1px solid #333;background:#1a1a24;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:10px;padding:12px;min-height:400px}
+.card{background:#17171f;border:1px solid #2a2a36;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.cover{aspect-ratio:3/4;background:#0a0a0f;position:relative;display:flex;align-items:center;justify-content:center}
+.cover img{width:100%;height:100%;object-fit:contain;background:#0a0a0f}
+.id{position:absolute;top:4px;left:4px;background:#2563eb;color:#fff;font-size:9px;padding:2px 5px;border-radius:4px;font-family:monospace;z-index:2}
+.info{padding:7px}
+.title{font-size:11px;height:28px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.2}
+.genre{font-size:9px;color:#777;margin-top:2px}
+.btn{margin-top:6px;width:100%;background:#fff;color:#000;border:0;padding:6px;border-radius:6px;font-weight:700;font-size:11px;cursor:pointer}
+.btn.added{background:#25D366}
+.missing{font-size:9px;color:#888;text-align:center;padding:6px;line-height:1.3}
+.missing b{color:#25D366;font-size:10px;display:block;word-break:break-all;margin-bottom:3px}
+.pages{display:flex;gap:5px;justify-content:center;padding:12px;flex-wrap:wrap}
+.pages button{background:#1a1a24;border:1px solid #333;color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px}
+.pages button.active{background:#fff;color:#000}
+.fab{position:fixed;bottom:16px;right:16px;background:#25D366;color:#000;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:360px;max-width:92vw;background:#11111a;border-left:1px solid #333;transform:translateX(100%);transition:.3s;z-index:100;display:flex;flex-direction:column}
+.drawer.open{transform:translateX(0)}
 </style>
 </head>
 <body>
-
-<div class="hero">
-<img src="banner.jpg" onerror="this.src='foto-asli-stik.jpg'" alt="Ali Games Banner">
-<div class="hero-overlay"><div class="hero-text"><h1>ALI GAMES</h1><p>Jl. A. Yani No.238 Jaya Plaza Lantai Dasar Blok I No.10 Bandung • 404 Game PS3</p></div></div>
+<div class="header">
+<div><h1>ALI GAMES - 404 GAME PS3 - FIX 2 JADI 404</h1><p>Cover = ID.jpg - Contoh BCAS-20097.jpg - Yang belum ada cover tetap muncul, tidak hilang!</p></div>
 </div>
-
-<div class="topbar">
-<div>📍 ALI GAMES - Jaya Plaza • WA 0895708629977 • Foto Cover Tepat 100% Sesuai Judul</div>
-<a href="https://wa.me/62895708629977" target="_blank">Chat WA</a>
+<div class="bar">
+<div>Total: <b id="total">404</b> Game | Tampil: <b id="show">0</b> | Cover ada: <b id="have">2</b> di folder cover/ | Sisanya tulisan "Belum ada" bukan hilang</div>
+<div><a href="https://wa.me/62895708629977" target="_blank" style="background:#25D366;color:#000;padding:6px 12px;border-radius:6px;font-weight:800;text-decoration:none">WA 0895708629977</a></div>
 </div>
-
-<div class="controls">
-<input id="search" placeholder="Cari ID / Judul... contoh BLUS-30385 atau FIFA 10">
-<select id="genre"><option value="ALL">ALL GENRE</option></select>
-<select id="perPage"><option value="48">48 / halaman</option><option value="96">96</option><option value="200">200</option><option value="404">Semua 404</option></select>
+<div class="search">
+<input id="q" placeholder="KOSONGKAN untuk tampil 404 - Ketik untuk cari ID/Judul...">
+<select id="genre"><option value="ALL">Semua Genre</option></select>
+<select id="per"><option value="60">60 / hal</option><option value="120">120 / hal</option><option value="404" selected>404 Semua (biar tidak hilang)</option></select>
+<button onclick="document.getElementById('q').value='';filter()" style="background:#333;color:#fff;border:1px solid #444;padding:10px 14px;border-radius:8px;cursor:pointer">Reset / Tampil Semua 404</button>
 </div>
-
 <div id="grid" class="grid"></div>
-<div id="pagin" class="pagin"></div>
+<div id="pages" class="pages"></div>
 
-<div class="fab" onclick="toggleDrawer()">🛒<span id="fabCount" style="font-size:12px;margin-left:2px">0</span></div>
-
-<div id="orderDrawer">
-<div class="drawer-head"><b>Order List (<span id="orderCount">0</span>)</b><button onclick="toggleDrawer()" style="background:#222;color:#fff;border:0;padding:6px 10px;border-radius:6px;cursor:pointer">✕</button></div>
-<div id="drawerList" class="drawer-list"></div>
-<div class="drawer-foot">
-<a id="waLink" class="btn-wa" href="#" target="_blank">Kirim Order ke WA</a>
-<button class="btn-copy" onclick="copyList()">Copy List</button>
-<button class="btn-clear" onclick="clearOrder()">Hapus Semua</button>
-<div style="font-size:11px;color:#666;line-height:1.4">Cara biar foto tepat: Foto cover BD fisik → rename jadi ID.jpg (contoh BLUS-30385.jpg) → upload ke folder <b>cover/</b> di GitHub → otomatis tepat!</div>
+<div class="fab" onclick="document.getElementById('drawer').classList.toggle('open')">🛒 <span id="fab">0</span></div>
+<div id="drawer" class="drawer">
+<div style="padding:14px;border-bottom:1px solid #222;display:flex;justify-content:space-between"><b>Order (<span id="cnt">0</span>)</b><button onclick="document.getElementById('drawer').classList.remove('open')" style="background:#222;color:#fff;border:0;padding:6px 10px;border-radius:6px">X</button></div>
+<div id="list" style="flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:6px"></div>
+<div style="padding:12px;border-top:1px solid #222;display:flex;flex-direction:column;gap:8px">
+<a id="wa" href="#" target="_blank" style="background:#25D366;color:#000;padding:12px;border-radius:8px;text-align:center;font-weight:800;text-decoration:none">Kirim ke WA</a>
 </div>
 </div>
 
 <script>
-// Load games from games.json
-let allGames = [];
-let filtered = [];
-let currentPage = 1;
-let order = JSON.parse(localStorage.getItem('ali_order')||'[]');
+const DATA = [{"id": "BCAS-00006", "title": "MotorStorm", "genre": "Racing"}, {"id": "BCAS-00050", "title": "Folklore", "genre": "Action"}, {"id": "BCAS-00266", "title": "Way of the Samurai 3", "genre": "Action"}, {"id": "BCAS-00424", "title": "Heavenly Sword", "genre": "Action"}, {"id": "BCAS-00747", "title": "LittleBigPlanet", "genre": "Action"}, {"id": "BCAS-00764", "title": "Resistance 2", "genre": "Shooter/Perang"}, {"id": "BCAS-00828", "title": "Killzone 2", "genre": "Shooter/Perang"}, {"id": "BCAS-00958", "title": "Uncharted 3: Drake's Deception", "genre": "Action"}, {"id": "BCAS-20005", "title": "Armored Core 4", "genre": "Shooter/Perang"}, {"id": "BCAS-20012", "title": "Formula One Championship Edition", "genre": "Racing"}, {"id": "BCAS-20014", "title": "Ridge Racer 7", "genre": "Racing"}, {"id": "BCAS-20016", "title": "Genji: Days of the Blade", "genre": "Action"}, {"id": "BCAS-20064", "title": "Devil May Cry 4", "genre": "Action"}, {"id": "BCAS-20066", "title": "Killzone 2", "genre": "Shooter/Perang"}, {"id": "BCAS-20074", "title": "Lost Planet: Extreme Condition", "genre": "Action"}, {"id": "BCAS-20090", "title": "Burnout Paradise", "genre": "Racing"}, {"id": "BCAS-20097", "title": "Uncharted 2: Among Thieves", "genre": "Action"}, {"id": "BCAS-20107", "title": "Heavy Rain", "genre": "Action"}, {"id": "BCAS-20113", "title": "Heavy Rain", "genre": "Action"}, {"id": "BCAS-20224", "title": "Final Fantasy XIII-2", "genre": "RPG"}, {"id": "BCAS-20238", "title": "One Piece: Pirate Warriors", "genre": "Action"}, {"id": "BCAS-25003", "title": "God of War III", "genre": "Action"}, {"id": "BCAS-25005", "title": "God of War Collection", "genre": "Action"}, {"id": "BCAS-25006", "title": "The Last of Us", "genre": "Action"}, {"id": "BCES-01029", "title": "Kung Fu Rider", "genre": "Action"}, {"id": "BCES-01115", "title": "Ico & Shadow of the Colossus Collection", "genre": "Action"}, {"id": "BCES-01278", "title": "God of War Collection Volume II", "genre": "Action"}, {"id": "BCES-01385", "title": "Starhawk", "genre": "Action"}, {"id": "BCES-01387", "title": "Twisted Metal", "genre": "Action"}, {"id": "BCES-01740", "title": "Beyond: Two Souls", "genre": "Action"}, {"id": "BCJS-30004", "title": "MotorStorm", "genre": "Racing"}, {"id": "BCJS-30005", "title": "Heavenly Sword", "genre": "Action"}, {"id": "BCJS-30009", "title": "Folklore", "genre": "Action"}, {"id": "BCJS-30012", "title": "Uncharted: Drake's Fortune", "genre": "Action"}, {"id": "BCJS-30017", "title": "Demon's Souls", "genre": "RPG"}, {"id": "BCJS-30021", "title": "LittleBigPlanet", "genre": "Action"}, {"id": "BCJS-30037", "title": "White Knight Chronicles", "genre": "RPG"}, {"id": "BCJS-30054", "title": "Demon's Souls", "genre": "RPG"}, {"id": "BCJS-30058", "title": "God of War III", "genre": "Action"}, {"id": "BCJS-30072", "title": "Gran Turismo 5", "genre": "Racing"}, {"id": "BCJS-75004", "title": "The Last of Us", "genre": "Action"}, {"id": "BCJS-90084", "title": "The Last Guy", "genre": "Action"}, {"id": "BCJS-90260", "title": "Siren: Blood Curse", "genre": "Action"}, {"id": "BCJS-90816", "title": "Afrika", "genre": "Action"}, {"id": "BCJS-90918", "title": "Trash Panic", "genre": "Action"}, {"id": "BCJS-91551", "title": "Yakuza 3", "genre": "Action"}, {"id": "BCJS-95008", "title": "Ninja Gaiden Sigma 2", "genre": "Action"}, {"id": "BCUS-98102", "title": "Resistance 2", "genre": "Shooter/Perang"}, {"id": "BCUS-98103", "title": "Uncharted: Drake's Fortune", "genre": "Action"}, {"id": "BCUS-98110", "title": "MAG", "genre": "Action"}, {"id": "BCUS-98111", "title": "God of War III", "genre": "Action"}, {"id": "BCUS-98112", "title": "ModNation Racers", "genre": "Action"}, {"id": "BCUS-98114", "title": "Gran Turismo 5", "genre": "Racing"}, {"id": "BCUS-98116", "title": "Killzone 2", "genre": "Shooter/Perang"}, {"id": "BCUS-98119", "title": "inFamous", "genre": "Action"}, {"id": "BCUS-98123", "title": "Uncharted 2: Among Thieves", "genre": "Action"}, {"id": "BCUS-98131", "title": "Genji: Days of the Blade", "genre": "Action"}, {"id": "BCUS-98132", "title": "Heavenly Sword", "genre": "Action"}, {"id": "BCUS-98137", "title": "MotorStorm", "genre": "Racing"}, {"id": "BCUS-98144", "title": "MotorStorm: Pacific Rift", "genre": "Racing"}, {"id": "BCUS-98145", "title": "Uncharted 2: Among Thieves", "genre": "Action"}, {"id": "BCUS-98147", "title": "Folklore", "genre": "Action"}, {"id": "BCUS-98148", "title": "LittleBigPlanet", "genre": "Action"}, {"id": "BCUS-98155", "title": "MAG", "genre": "Action"}, {"id": "BCUS-98164", "title": "Heavy Rain", "genre": "Action"}, {"id": "BCUS-98174", "title": "Sly Cooper: Thieves in Time", "genre": "Action"}, {"id": "BCUS-98180", "title": "Twisted Metal", "genre": "Action"}, {"id": "BCUS-98208", "title": "inFamous 2", "genre": "Action"}, {"id": "BCUS-98214", "title": "LittleBigPlanet 2", "genre": "Action"}, {"id": "BCUS-98233", "title": "Uncharted 3: Drake's Deception", "genre": "Action"}, {"id": "BCUS-98234", "title": "Killzone 3", "genre": "Shooter/Perang"}, {"id": "BCUS-98242", "title": "The Sly Collection", "genre": "Action"}, {"id": "BCUS-98248", "title": "SOCOM 4", "genre": "Action"}, {"id": "BCUS-98251", "title": "MLB 11 The Show", "genre": "Action"}, {"id": "BCUS-98254", "title": "Resistance 3", "genre": "Shooter/Perang"}, {"id": "BCUS-98257", "title": "Uncharted 3: Drake's Deception", "genre": "Action"}, {"id": "BCUS-98259", "title": "God of War: Origins Collection", "genre": "Action"}, {"id": "BCUS-98261", "title": "Gran Turismo 6", "genre": "Racing"}, {"id": "BCUS-98279", "title": "PlayStation All-Stars Battle Royale", "genre": "Action"}, {"id": "BCUS-98289", "title": "God of War: Origins Collection", "genre": "Action"}, {"id": "BCUS-98296", "title": "Starhawk", "genre": "Action"}, {"id": "BCUS-98298", "title": "The Last of Us", "genre": "Action"}, {"id": "BCUS-98336", "title": "Beyond: Two Souls", "genre": "Action"}, {"id": "BCUS-98365", "title": "Puppeteer", "genre": "Action"}, {"id": "BCUS-98377", "title": "The Last of Us: Left Behind", "genre": "Action"}, {"id": "BCUS-98475", "title": "Gran Turismo 6", "genre": "Racing"}, {"id": "BCUS-99024", "title": "MLB 14 The Show", "genre": "Action"}, {"id": "BCUS-99075", "title": "MLB 12 The Show", "genre": "Action"}, {"id": "BCUS-99139", "title": "MLB 13 The Show", "genre": "Action"}, {"id": "BCUS-99195", "title": "The Last of Us Remastered Concept? Actually BCUS-99195 is The Last of Us", "genre": "Action"}, {"id": "BCUS-99205", "title": "Uncharted 3: Drake's Deception Game of the Year", "genre": "Action"}, {"id": "BLAS-50001", "title": "Mobile Suit Gundam: Crossfire", "genre": "Action"}, {"id": "BLAS-50040", "title": "Devil May Cry 4", "genre": "Action"}, {"id": "BLAS-50053", "title": "Pro Evolution Soccer 2008", "genre": "Olahraga"}, {"id": "BLAS-50072", "title": "Lost Planet", "genre": "Action"}, {"id": "BLAS-50127", "title": "Burnout Paradise", "genre": "Racing"}, {"id": "BLAS-50588", "title": "God of War III", "genre": "Action"}, {"id": "BLAS-50593", "title": "LittleBigPlanet", "genre": "Action"}, {"id": "BLES-00016", "title": "Call of Duty 3", "genre": "Shooter/Perang"}, {"id": "BLES-00045", "title": "The Godfather: The Don's Edition", "genre": "Action"}, {"id": "BLES-00115", "title": "The Elder Scrolls IV: Oblivion", "genre": "RPG"}, {"id": "BLES-00132", "title": "Sega Rally Revo", "genre": "Action"}, {"id": "BLES-00153", "title": "Unreal Tournament III", "genre": "Action"}, {"id": "BLES-00158", "title": "Assassin's Creed", "genre": "Action"}, {"id": "BLES-00180", "title": "The Golden Compass", "genre": "Action"}, {"id": "BLES-00219", "title": "Lost: Via Domus", "genre": "Action"}, {"id": "BLES-00235", "title": "Turok", "genre": "Action"}, {"id": "BLES-00280", "title": "Brothers in Arms: Hell's Highway", "genre": "Action"}, {"id": "BLES-00324", "title": "Far Cry 2", "genre": "Action"}, {"id": "BLES-00329", "title": "Fracture", "genre": "Action"}, {"id": "BLES-00332", "title": "LEGO Batman: The Videogame", "genre": "Action"}, {"id": "BLES-00391", "title": "Golden Axe: Beast Rider", "genre": "Action"}, {"id": "BLES-00396", "title": "MotoGP 08", "genre": "Racing"}, {"id": "BLES-00412", "title": "The Lord of the Rings: Conquest", "genre": "Action"}, {"id": "BLES-00466", "title": "NPPL Championship Paintball 2009", "genre": "Action"}, {"id": "BLES-00485", "title": "Resident Evil 5", "genre": "Horror"}, {"id": "BLES-00501", "title": "The Godfather II", "genre": "Action"}, {"id": "BLES-00503", "title": "Batman: Arkham Asylum", "genre": "Action"}, {"id": "BLES-00585", "title": "Aliens vs Predator", "genre": "Action"}, {"id": "BLES-00669", "title": "Assassin's Creed II", "genre": "Action"}, {"id": "BLES-00693", "title": "Dragon Ball: Raging Blast", "genre": "Fighting"}, {"id": "BLES-00719", "title": "Prototype", "genre": "Action"}, {"id": "BLES-00772", "title": "Arthur and the Revenge of Maltazard", "genre": "Action"}, {"id": "BLES-00789", "title": "Resonance of Fate", "genre": "Action"}, {"id": "BLES-00910", "title": "Assassin's Creed: Brotherhood", "genre": "Action"}, {"id": "BLES-00919", "title": "Majin and the Forsaken Kingdom", "genre": "Action"}, {"id": "BLES-00949", "title": "Need for Speed: Hot Pursuit", "genre": "Racing"}, {"id": "BLES-00988", "title": "Enslaved: Odyssey to the West", "genre": "Action"}, {"id": "BLES-01001", "title": "Knights Contract", "genre": "Action"}, {"id": "BLES-01009", "title": "Mindjack", "genre": "Action"}, {"id": "BLES-01044", "title": "Army of Two: The 40th Day", "genre": "Action"}, {"id": "BLES-01080", "title": "Yoostar 2: In the Movies", "genre": "Action"}, {"id": "BLES-01093", "title": "Rage", "genre": "Shooter/Perang"}, {"id": "BLES-01182", "title": "F1 2011", "genre": "Racing"}, {"id": "BLES-01193", "title": "The Adventures of Tintin", "genre": "Action"}, {"id": "BLES-01211", "title": "Binary Domain", "genre": "Shooter/Perang"}, {"id": "BLES-01217", "title": "Hunter's Trophy", "genre": "Action"}, {"id": "BLES-01241", "title": "LEGO Pirates of the Caribbean", "genre": "Action"}, {"id": "BLES-01275", "title": "Battlefield 3", "genre": "Shooter/Perang"}, {"id": "BLES-01305", "title": "Agarest: Generations of War Zero", "genre": "Action"}, {"id": "BLES-01306", "title": "The Adventures of Tintin: The Secret of the Unicorn", "genre": "Action"}, {"id": "BLES-01388", "title": "The Darkness II", "genre": "Action"}, {"id": "BLES-01409", "title": "The King of Fighters XIII", "genre": "Action"}, {"id": "BLES-01413", "title": "Monkey Island: Special Edition Collection", "genre": "Action"}, {"id": "BLES-01419", "title": "Metal Gear Solid HD Collection", "genre": "Action"}, {"id": "BLES-01468", "title": "Cabela's Adventure Camp", "genre": "Action"}, {"id": "BLES-01697", "title": "Alien: Isolation", "genre": "Action"}, {"id": "BLES-01722", "title": "Just Dance 4", "genre": "Action"}, {"id": "BLES-01732", "title": "Dead Space 3", "genre": "Action"}, {"id": "BLES-01735", "title": "Anarchy Reigns", "genre": "Action"}, {"id": "BLES-01783", "title": "F1 Race Stars", "genre": "Racing"}, {"id": "BLES-01790", "title": "Persona 4 Arena", "genre": "RPG"}, {"id": "BLES-01798", "title": "Sniper: Ghost Warrior 2", "genre": "Action"}, {"id": "BLES-01810", "title": "God of War: Ascension", "genre": "Action"}, {"id": "BLES-01832", "title": "Tomb Raider", "genre": "Action"}, {"id": "BLES-01913", "title": "F1 2013", "genre": "Racing"}, {"id": "BLES-01950", "title": "GRID 2", "genre": "Racing"}, {"id": "BLES-01978", "title": "The Last of Us", "genre": "Action"}, {"id": "BLES-01994", "title": "Minecraft: PlayStation 3 Edition", "genre": "Action"}, {"id": "BLES-02052", "title": "MX vs ATV Supercross", "genre": "Racing"}, {"id": "BLES-02102", "title": "Metal Gear Solid V: The Phantom Pain", "genre": "Action"}, {"id": "BLES-02169", "title": "MotoGP 14", "genre": "Racing"}, {"id": "BLES-02194", "title": "Middle-earth: Shadow of Mordor", "genre": "Action"}, {"id": "BLES-02199", "title": "The Evil Within", "genre": "Horror"}, {"id": "BLES-02219", "title": "Grand Theft Auto: San Andreas", "genre": "Action"}, {"id": "BLJM-02032", "title": "Super Street Fighter IV", "genre": "Fighting"}, {"id": "BLJM-02052", "title": "Super Street Fighter IV Arcade Edition", "genre": "Fighting"}, {"id": "BLJM-60007", "title": "Miyazato San Kyoudai Naizou: Sega Golf Club", "genre": "Action"}, {"id": "BLJM-60009", "title": "Bladestorm: The Hundred Years' War", "genre": "Action"}, {"id": "BLJM-60014", "title": "Need for Speed Carbon", "genre": "Racing"}, {"id": "BLJM-60018", "title": "Dynasty Warriors: Gundam", "genre": "Action"}, {"id": "BLJM-60022", "title": "Mist of Chaos", "genre": "Action"}, {"id": "BLJM-60042", "title": "Imabikisou", "genre": "Action"}, {"id": "BLJM-60080", "title": "Beijing 2008", "genre": "Olahraga"}, {"id": "BLJM-60082", "title": "Metal Gear Online", "genre": "Action"}, {"id": "BLJM-60086", "title": "Cross Edge", "genre": "Action"}, {"id": "BLJM-60122", "title": "Pure", "genre": "Action"}, {"id": "BLJM-60136", "title": "Tom Clancy's EndWar", "genre": "Action"}, {"id": "BLJM-60150", "title": "Stranglehold", "genre": "Action"}, {"id": "BLJM-60158", "title": "Battlefield: Bad Company", "genre": "Shooter/Perang"}, {"id": "BLJM-60174", "title": "Bayonetta", "genre": "Action"}, {"id": "BLJM-60187", "title": "Resonance of Fate", "genre": "Action"}, {"id": "BLJM-60196", "title": "Fist of the North Star: Ken's Rage", "genre": "Shooter/Perang"}, {"id": "BLJM-60206", "title": "Front Mission Evolved", "genre": "Shooter/Perang"}, {"id": "BLJM-60215", "title": "Catherine", "genre": "Action"}, {"id": "BLJM-60248", "title": "Arcana Heart 3", "genre": "Action"}, {"id": "BLJM-60256", "title": "Marvel vs Capcom 3", "genre": "Fighting"}, {"id": "BLJM-60267", "title": "Way of the Samurai 3", "genre": "Action"}, {"id": "BLJM-60272", "title": "Red Dead Redemption", "genre": "Action"}, {"id": "BLJM-60279", "title": "Another Century's Episode R", "genre": "Action"}, {"id": "BLJM-60284", "title": "Fallout: New Vegas", "genre": "Shooter/Perang"}, {"id": "BLJM-60300", "title": "Dead Rising 2", "genre": "Action"}, {"id": "BLJM-60301", "title": "Vanquish", "genre": "Shooter/Perang"}, {"id": "BLJM-60302", "title": "Castlevania: Lords of Shadow", "genre": "Action"}, {"id": "BLJM-60305", "title": "Sengoku Basara 3", "genre": "Action"}, {"id": "BLJM-60317", "title": "Enslaved: Odyssey to the West", "genre": "Action"}, {"id": "BLJM-60322", "title": "F1 2010", "genre": "Racing"}, {"id": "BLJM-60348", "title": "Deus Ex: Human Revolution", "genre": "Action"}, {"id": "BLJM-60382", "title": "Record of Agarest War 2", "genre": "Action"}, {"id": "BLJM-60407", "title": "The King of Fighters XIII", "genre": "Action"}, {"id": "BLJM-60468", "title": "Armored Core V", "genre": "Shooter/Perang"}, {"id": "BLJM-60482", "title": "Ninja Gaiden 3", "genre": "Action"}, {"id": "BLJM-60982", "title": "Yakuza 4", "genre": "Action"}, {"id": "BLJM-60992", "title": "Way of the Samurai 4", "genre": "Action"}, {"id": "BLJM-61050", "title": "White Knight Chronicles II", "genre": "RPG"}, {"id": "BLJM-61059", "title": "Disgaea 4", "genre": "RPG"}, {"id": "BLJS-10005", "title": "Ninja Gaiden Sigma", "genre": "Action"}, {"id": "BLJS-10050", "title": "Mobile Suit Gundam: Battlefield Record U.C. 0081", "genre": "Shooter/Perang"}, {"id": "BLJS-10063", "title": "Uncharted: Drake's Fortune", "genre": "Action"}, {"id": "BLJS-10075", "title": "Demon's Souls", "genre": "RPG"}, {"id": "BLJS-10081", "title": "Way of the Samurai 3", "genre": "Action"}, {"id": "BLJS-10090", "title": "Yakuza 3", "genre": "Action"}, {"id": "BLJS-10095", "title": "White Knight Chronicles", "genre": "RPG"}, {"id": "BLJS-10098", "title": "Siren: Blood Curse", "genre": "Action"}, {"id": "BLJS-10102", "title": "Afrika", "genre": "Action"}, {"id": "BLJS-10118", "title": "Yakuza Kenzan!", "genre": "Action"}, {"id": "BLJS-10209", "title": "The Last Guy", "genre": "Action"}, {"id": "BLJS-30005", "title": "Gran Turismo 5 Prologue", "genre": "Racing"}, {"id": "BLJS-30006", "title": "Metal Gear Solid 4: Guns of the Patriots", "genre": "Action"}, {"id": "BLJS-30010", "title": "Gran Turismo 6", "genre": "Racing"}, {"id": "BLJS-30017", "title": "Folklore", "genre": "Action"}, {"id": "BLJS-30019", "title": "Uncharted 2: Among Thieves", "genre": "Action"}, {"id": "BLUS-30017", "title": "Mobile Suit Gundam: Crossfire", "genre": "Action"}, {"id": "BLUS-30027", "title": "Armored Core 4", "genre": "Shooter/Perang"}, {"id": "BLUS-30035", "title": "The Darkness", "genre": "Action"}, {"id": "BLUS-30036", "title": "Ninja Gaiden Sigma", "genre": "Action"}, {"id": "BLUS-30042", "title": "Fantastic Four: Rise of the Silver Surfer", "genre": "Action"}, {"id": "BLUS-30045", "title": "Harry Potter and the Order of the Phoenix", "genre": "Action"}, {"id": "BLUS-30048", "title": "Hellboy: The Science of Evil", "genre": "Action"}, {"id": "BLUS-30057", "title": "Army of Two", "genre": "Action"}, {"id": "BLUS-30058", "title": "Dynasty Warriors: Gundam", "genre": "Action"}, {"id": "BLUS-30063", "title": "Clive Barker's Jericho", "genre": "Action"}, {"id": "BLUS-30064", "title": "DiRT", "genre": "Racing"}, {"id": "BLUS-30070", "title": "Bladestorm: The Hundred Years' War", "genre": "Action"}, {"id": "BLUS-30072", "title": "Call of Duty 4: Modern Warfare", "genre": "Shooter/Perang"}, {"id": "BLUS-30074", "title": "Guitar Hero III: Legends of Rock", "genre": "Action"}, {"id": "BLUS-30078", "title": "College Hoops 2K8", "genre": "Action"}, {"id": "BLUS-30084", "title": "Juiced 2: Hot Import Nights", "genre": "Action"}, {"id": "BLUS-30089", "title": "Assassin's Creed", "genre": "Action"}, {"id": "BLUS-30091", "title": "Beowulf", "genre": "Action"}, {"id": "BLUS-30092", "title": "Devil May Cry 4", "genre": "Action"}, {"id": "BLUS-30094", "title": "Haze", "genre": "Action"}, {"id": "BLUS-30102", "title": "Kane & Lynch: Dead Men", "genre": "Action"}, {"id": "BLUS-30107", "title": "Conflict: Denied Ops", "genre": "Shooter/Perang"}, {"id": "BLUS-30108", "title": "The Club", "genre": "Action"}, {"id": "BLUS-30115", "title": "Condemned 2: Bloodshot", "genre": "Action"}, {"id": "BLUS-30116", "title": "Dark Sector", "genre": "Action"}, {"id": "BLUS-30117", "title": "Dragon Ball Z: Burst Limit", "genre": "Fighting"}, {"id": "BLUS-30118", "title": "Battlefield: Bad Company", "genre": "Shooter/Perang"}, {"id": "BLUS-30120", "title": "Lost: Via Domus", "genre": "Action"}, {"id": "BLUS-30127", "title": "Grand Theft Auto IV", "genre": "Action"}, {"id": "BLUS-30133", "title": "Guitar Hero: Aerosmith", "genre": "Action"}, {"id": "BLUS-30146", "title": "Madden NFL 09", "genre": "Olahraga"}, {"id": "BLUS-30151", "title": "WALL-E", "genre": "Action"}, {"id": "BLUS-30152", "title": "The Incredible Hulk", "genre": "Action"}, {"id": "BLUS-30154", "title": "Beijing 2008 - The Official Video Game of the Olympic Games", "genre": "Olahraga"}, {"id": "BLUS-30156", "title": "The Chronicles of Riddick: Assault on Dark Athena", "genre": "Action"}, {"id": "BLUS-30164", "title": "Guitar Hero: World Tour", "genre": "Action"}, {"id": "BLUS-30165", "title": "Brothers in Arms: Hell's Highway", "genre": "Action"}, {"id": "BLUS-30166", "title": "BioShock", "genre": "Shooter/Perang"}, {"id": "BLUS-30175", "title": "LEGO Batman: The Videogame", "genre": "Action"}, {"id": "BLUS-30177", "title": "Dead Space", "genre": "Action"}, {"id": "BLUS-30181", "title": "Disgaea 3: Absence of Justice", "genre": "RPG"}, {"id": "BLUS-30184", "title": "Fracture", "genre": "Action"}, {"id": "BLUS-30185", "title": "Fallout 3", "genre": "Shooter/Perang"}, {"id": "BLUS-30187", "title": "Armored Core: For Answer", "genre": "Shooter/Perang"}, {"id": "BLUS-30192", "title": "Call of Duty: World at War", "genre": "Shooter/Perang"}, {"id": "BLUS-30198", "title": "007: Quantum of Solace", "genre": "Action"}, {"id": "BLUS-30210", "title": "Legendary", "genre": "Action"}, {"id": "BLUS-30211", "title": "History Channel Civil War: Secret Missions", "genre": "Action"}, {"id": "BLUS-30224", "title": "Tomb Raider: Underworld", "genre": "Action"}, {"id": "BLUS-30226", "title": "The Lord of the Rings: Conquest", "genre": "Action"}, {"id": "BLUS-30232", "title": "Alone in the Dark: Inferno", "genre": "Action"}, {"id": "BLUS-30242", "title": "Harry Potter and the Half-Blood Prince", "genre": "Action"}, {"id": "BLUS-30255", "title": "Bionic Commando", "genre": "Action"}, {"id": "BLUS-30257", "title": "Guitar Hero: Metallica", "genre": "Action"}, {"id": "BLUS-30264", "title": "Afro Samurai", "genre": "Action"}, {"id": "BLUS-30270", "title": "Resident Evil 5", "genre": "Horror"}, {"id": "BLUS-30278", "title": "Dead to Rights: Retribution", "genre": "Action"}, {"id": "BLUS-30279", "title": "Batman: Arkham Asylum", "genre": "Action"}, {"id": "BLUS-30281", "title": "Mafia II", "genre": "Action"}, {"id": "BLUS-30282", "title": "The Beatles: Rock Band", "genre": "Action"}, {"id": "BLUS-30291", "title": "Guitar Hero: Van Halen", "genre": "Action"}, {"id": "BLUS-30304", "title": "Damnation", "genre": "Action"}, {"id": "BLUS-30307", "title": "Ghostbusters: The Video Game", "genre": "Action"}, {"id": "BLUS-30320", "title": "Darksiders", "genre": "Action"}, {"id": "BLUS-30336", "title": "Katamari Forever", "genre": "Action"}, {"id": "BLUS-30339", "title": "Castlevania: Lords of Shadow", "genre": "Action"}, {"id": "BLUS-30340", "title": "Aliens vs Predator", "genre": "Action"}, {"id": "BLUS-30341", "title": "Alpha Protocol", "genre": "Action"}, {"id": "BLUS-30348", "title": "Cross Edge", "genre": "Action"}, {"id": "BLUS-30350", "title": "Green Day: Rock Band", "genre": "Action"}, {"id": "BLUS-30360", "title": "Inversion", "genre": "Action"}, {"id": "BLUS-30367", "title": "Bayonetta", "genre": "Action"}, {"id": "BLUS-30375", "title": "Madden NFL 10", "genre": "Olahraga"}, {"id": "BLUS-30377", "title": "Call of Duty: Modern Warfare 2", "genre": "Shooter/Perang"}, {"id": "BLUS-30382", "title": "LEGO Rock Band", "genre": "Action"}, {"id": "BLUS-30383", "title": "Kane & Lynch 2: Dog Days", "genre": "Action"}, {"id": "BLUS-30385", "title": "FIFA Soccer 10", "genre": "Olahraga"}, {"id": "BLUS-30386", "title": "Borderlands", "genre": "Shooter/Perang"}, {"id": "BLUS-30392", "title": "BlazBlue: Calamity Trigger", "genre": "Fighting"}, {"id": "BLUS-30399", "title": "Afrika", "genre": "Action"}, {"id": "BLUS-30400", "title": "Just Cause 2", "genre": "Action"}, {"id": "BLUS-30408", "title": "Army of Two: The 40th Day", "genre": "Action"}, {"id": "BLUS-30415", "title": "Dragon Age: Origins", "genre": "RPG"}, {"id": "BLUS-30418", "title": "Red Dead Redemption", "genre": "Action"}, {"id": "BLUS-30420", "title": "BioShock 2", "genre": "Shooter/Perang"}, {"id": "BLUS-30425", "title": "LEGO Indiana Jones 2: The Adventure Continues", "genre": "Action"}, {"id": "BLUS-30428", "title": "Catherine", "genre": "Action"}, {"id": "BLUS-30431", "title": "Dragon Ball: Raging Blast", "genre": "Fighting"}, {"id": "BLUS-30436", "title": "Medal of Honor", "genre": "Shooter/Perang"}, {"id": "BLUS-30437", "title": "LEGO Harry Potter: Years 1-4", "genre": "Action"}, {"id": "BLUS-30439", "title": "Dead Rising 2", "genre": "Action"}, {"id": "BLUS-30451", "title": "Fallout 3: Game of the Year Edition", "genre": "Shooter/Perang"}, {"id": "BLUS-30461", "title": "How to Train Your Dragon", "genre": "Action"}, {"id": "BLUS-30475", "title": "Iron Man 2", "genre": "Action"}, {"id": "BLUS-30490", "title": "3D Dot Game Heroes", "genre": "Action"}, {"id": "BLUS-30508", "title": "Disney Sing It: Family Hits", "genre": "Action"}, {"id": "BLUS-30509", "title": "Dragon Age: Origins - Awakening", "genre": "RPG"}, {"id": "BLUS-30514", "title": "Iron Man 2", "genre": "Action"}, {"id": "BLUS-30515", "title": "Batman: Arkham Asylum: Game of the Year Edition", "genre": "Action"}, {"id": "BLUS-30517", "title": "Mafia II", "genre": "Action"}, {"id": "BLUS-30530", "title": "Homefront", "genre": "Action"}, {"id": "BLUS-30537", "title": "FIFA Soccer 11", "genre": "Olahraga"}, {"id": "BLUS-30538", "title": "NBA 2K11", "genre": "Olahraga"}, {"id": "BLUS-30540", "title": "LEGO Star Wars III: The Clone Wars", "genre": "Action"}, {"id": "BLUS-30545", "title": "Medal of Honor (2010)", "genre": "Shooter/Perang"}, {"id": "BLUS-30546", "title": "Dead Nation", "genre": "Action"}, {"id": "BLUS-30547", "title": "Fallout: New Vegas", "genre": "Shooter/Perang"}, {"id": "BLUS-30554", "title": "L.A. Noire", "genre": "Action"}, {"id": "BLUS-30557", "title": "TRON: Evolution", "genre": "Action"}, {"id": "BLUS-30581", "title": "DC Universe Online", "genre": "Action"}, {"id": "BLUS-30591", "title": "Homefront", "genre": "Action"}, {"id": "BLUS-30602", "title": "Shift 2: Unleashed", "genre": "Action"}, {"id": "BLUS-30607", "title": "Alice: Madness Returns", "genre": "Action"}, {"id": "BLUS-30608", "title": "Top Spin 4", "genre": "Olahraga"}, {"id": "BLUS-30633", "title": "Operation Flashpoint: Red River", "genre": "Action"}, {"id": "BLUS-30639", "title": "Alice: Madness Returns", "genre": "Action"}, {"id": "BLUS-30641", "title": "Child of Eden", "genre": "Action"}, {"id": "BLUS-30645", "title": "F.E.A.R. 3", "genre": "Action"}, {"id": "BLUS-30650", "title": "DiRT 3", "genre": "Racing"}, {"id": "BLUS-30651", "title": "Bulletstorm", "genre": "Shooter/Perang"}, {"id": "BLUS-30662", "title": "Driver: San Francisco", "genre": "Action"}, {"id": "BLUS-30682", "title": "Rage", "genre": "Shooter/Perang"}, {"id": "BLUS-30686", "title": "El Shaddai: Ascension of the Metatron", "genre": "Action"}, {"id": "BLUS-30711", "title": "Red Dead Redemption: Undead Nightmare", "genre": "Action"}, {"id": "BLUS-30718", "title": "The Tomb Raider Trilogy", "genre": "Action"}, {"id": "BLUS-30719", "title": "Major League Baseball 2K11", "genre": "Action"}, {"id": "BLUS-30722", "title": "Street Fighter X Tekken", "genre": "Fighting"}, {"id": "BLUS-30729", "title": "Binary Domain", "genre": "Shooter/Perang"}, {"id": "BLUS-30744", "title": "LEGO Pirates of the Caribbean", "genre": "Action"}, {"id": "BLUS-30753", "title": "Generator Rex: Agent of Providence", "genre": "Action"}, {"id": "BLUS-30762", "title": "Battlefield 3", "genre": "Shooter/Perang"}, {"id": "BLUS-30763", "title": "Dead Rising 2: Off the Record", "genre": "Action"}, {"id": "BLUS-30764", "title": "Devil May Cry HD Collection", "genre": "Action"}, {"id": "BLUS-30767", "title": "Dragon's Crown", "genre": "Action"}, {"id": "BLUS-30770", "title": "Madden NFL 12", "genre": "Olahraga"}, {"id": "BLUS-30774", "title": "The House of the Dead: Overkill - Extended Cut", "genre": "Action"}, {"id": "BLUS-30778", "title": "The Elder Scrolls V: Skyrim", "genre": "RPG"}, {"id": "BLUS-30782", "title": "Dark Souls", "genre": "Action"}, {"id": "BLUS-30790", "title": "Dead Island", "genre": "Action"}, {"id": "BLUS-30794", "title": "LEGO Harry Potter: Years 5-7", "genre": "Action"}, {"id": "BLUS-30795", "title": "Call of Juarez: The Cartel", "genre": "Action"}, {"id": "BLUS-30800", "title": "Risen 2: Dark Waters", "genre": "Action"}, {"id": "BLUS-30822", "title": "Ben 10: Galactic Racing", "genre": "Action"}, {"id": "BLUS-30826", "title": "Yakuza: Dead Souls", "genre": "Action"}, {"id": "BLUS-30827", "title": "Unassigned / No Commercial Release", "genre": "Action"}, {"id": "BLUS-30833", "title": "Blades of Time", "genre": "Action"}, {"id": "BLUS-30850", "title": "Air Conflicts: Secret Wars", "genre": "Shooter/Perang"}, {"id": "BLUS-30890", "title": "Fallout: New Vegas - Ultimate Edition", "genre": "Shooter/Perang"}, {"id": "BLUS-30892", "title": "Tekken Hybrid", "genre": "Fighting"}, {"id": "BLUS-30922", "title": "The Cursed Crusade", "genre": "Action"}, {"id": "BLUS-30930", "title": "Max Payne 3 Special Edition", "genre": "Action"}, {"id": "BLUS-30941", "title": "Atelier Meruru: The Apprentice of Arland", "genre": "Action"}, {"id": "BLUS-30963", "title": "LEGO The Lord of the Rings", "genre": "Action"}, {"id": "BLUS-30966", "title": "Dragon Ball Z: Budokai HD Collection", "genre": "Fighting"}, {"id": "BLUS-30971", "title": "Dead or Alive 5", "genre": "Fighting"}, {"id": "BLUS-30975", "title": "DiRT 3: Complete Edition", "genre": "Racing"}, {"id": "BLUS-30978", "title": "Batman: Arkham City GOTY", "genre": "Action"}, {"id": "BLUS-30982", "title": "Borderlands 2", "genre": "Shooter/Perang"}, {"id": "BLUS-30990", "title": "Medal of Honor: Warfighter", "genre": "Shooter/Perang"}, {"id": "BLUS-31011", "title": "Call of Duty: Black Ops II", "genre": "Shooter/Perang"}, {"id": "BLUS-31146", "title": "Deadpool", "genre": "Action"}, {"id": "BLUS-31150", "title": "Hyperdimension Neptunia Victory", "genre": "Action"}, {"id": "BLUS-31152", "title": "Atelier Ayesha: The Alchemist of Dusk", "genre": "Action"}, {"id": "BLUS-31161", "title": "LEGO Marvel Super Heroes", "genre": "Action"}, {"id": "BLUS-31164", "title": "Lightning Returns: Final Fantasy XIII", "genre": "RPG"}, {"id": "BLUS-31178", "title": "Madden NFL 25", "genre": "Olahraga"}, {"id": "BLUS-31182", "title": "Rocksmith 2014", "genre": "Action"}, {"id": "BLUS-31192", "title": "Worms Collection", "genre": "Action"}, {"id": "BLUS-31275", "title": "Cabela's African Adventures", "genre": "Action"}, {"id": "BLUS-31276", "title": "SpongeBob SquarePants: Plankton's Robotic Revenge", "genre": "Action"}, {"id": "BLUS-31324", "title": "Transformers: Rise of the Dark Spark", "genre": "Action"}, {"id": "BLUS-31369", "title": "Metal Gear Solid V: Ground Zeroes", "genre": "Action"}, {"id": "BLUS-31372", "title": "2K Power Pack", "genre": "Action"}, {"id": "BLUS-31433", "title": "Escape Dead Island", "genre": "Action"}, {"id": "BLUS-31435", "title": "Teenage Mutant Ninja Turtles: Danger of the Ooze", "genre": "Action"}, {"id": "BLUS-31474", "title": "Tokyo Twilight Ghost Hunters", "genre": "Action"}, {"id": "BLUS-31478", "title": "Ar nosurge: Ode to an Unborn Star", "genre": "Action"}, {"id": "BLUS-31482", "title": "Destiny Ghost Edition", "genre": "Action"}, {"id": "BLUS-31500", "title": "The Awakened Fate Ultimatum", "genre": "Action"}, {"id": "BLUS-41005", "title": "Call of Duty: Black Ops II Care Package", "genre": "Shooter/Perang"}, {"id": "BLUS-41021", "title": "Metal Gear Rising: Revengeance Limited Edition", "genre": "Action"}, {"id": "BLUS-41023", "title": "Sniper: Ghost Warrior 2 Limited Edition", "genre": "Action"}];
+let filtered=[...DATA], order=JSON.parse(localStorage.getItem('ali404')||'[]'), page=1;
 
-async function loadGames(){
-  try{
-    const res = await fetch('games.json');
-    allGames = await res.json();
-  }catch(e){
-    // fallback embedded sample if fetch fails
-    allGames = [{"id":"BLUS-30385","title":"FIFA 10","genre":"Olahraga"},{"id":"BCAS-20066","title":"Killzone 2","genre":"Shooter"}];
-  }
-  // genres
-  const genres = [...new Set(allGames.map(g=>g.genre))].sort();
-  const sel = document.getElementById('genre');
-  genres.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);});
-  applyFilter();
+function init(){
+  const gs=[...new Set(DATA.map(g=>g.genre))].sort();
+  const sel=document.getElementById('genre');
+  gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);});
+  document.getElementById('total').textContent=DATA.length;
+  filter();
 }
-
-function getCoverUrls(id){
-  // PRIORITAS: folder lokal kamu yang ada di repo (cover singular) - INI KUNCI BIAR TEPAT 100%
-  const idNoDash = id.replace('-','');
-  const idUnderscore = id.replace('-','_');
-  return [
-    `cover/${id}.jpg`,
-    `cover/${id}.JPG`,
-    `cover/${idNoDash}.jpg`,
-    `covers/${id}.jpg`,
-    `covers/${idNoDash}.jpg`,
-    // fallback CDN (kalau belum upload foto sendiri, baru pakai internet - tapi sering ngaco, jadi upload foto fisik lebih bagus)
-    `https://cdn.jsdelivr.net/gh/st-alves/ps3-covers@main/covers/default/${id}.jpg`,
-    `https://cdn.jsdelivr.net/gh/aldostools/Resources@main/COV/${idNoDash}.JPG`
-  ];
-}
-
-function applyFilter(){
-  const q = document.getElementById('search').value.toLowerCase();
-  const g = document.getElementById('genre').value;
-  filtered = allGames.filter(game=>{
-    const matchQ = !q || game.id.toLowerCase().includes(q) || game.title.toLowerCase().includes(q);
-    const matchG = g==='ALL' || game.genre===g;
-    return matchQ && matchG;
+function filter(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const gv=document.getElementById('genre').value;
+  filtered=DATA.filter(x=>{
+    const mq=!q||x.id.toLowerCase().includes(q)||x.title.toLowerCase().includes(q);
+    const mg=gv==='ALL'||x.genre===gv;
+    return mq&&mg;
   });
-  currentPage = 1;
+  page=1;
   render();
 }
-
 function render(){
-  const per = parseInt(document.getElementById('perPage').value);
-  const totalPages = Math.ceil(filtered.length/per);
-  const start = (currentPage-1)*per;
-  const pageGames = filtered.slice(start, start+per);
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  pageGames.forEach(game=>{
-    const card = document.createElement('div');
+  const per=parseInt(document.getElementById('per').value);
+  const total=Math.ceil(filtered.length/per);
+  const start=(page-1)*per;
+  const slice=filtered.slice(start,start+per);
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  slice.forEach(g=>{
+    const added=order.find(o=>o.id===g.id);
+    const card=document.createElement('div');
     card.className='card';
-    const coverUrls = getCoverUrls(game.id);
-    const imgId = `img-${game.id}`;
-    card.innerHTML = `
-      <div class="cover-wrap">
-        <span class="badge-id">${game.id}</span>
-        <img id="${imgId}" src="${coverUrls[0]}" alt="${game.title}" loading="lazy" onerror="nextCover(this, '${game.id}')">
-      </div>
-      <div class="info">
-        <h3>${game.title}</h3>
-        <div class="genre">${game.genre}</div>
-        <button onclick="addOrder('${game.id}')" id="btn-${game.id}">${order.find(o=>o.id===game.id)?'✓ Ditambahkan':'Tambah Order'}</button>
-      </div>
-    `;
+    card.innerHTML='<div class="cover"><span class="id">'+g.id+'</span><img src="cover/'+g.id+'.jpg" alt="'+g.title+'" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'"><div class="missing" style="display:none"><b>cover/'+g.id+'.jpg</b>Belum ada<br>'+g.title+'<br><span style="font-size:8px">Upload '+g.id+'.jpg ke folder cover/</span></div></div><div class="info"><div class="title">'+g.title+'</div><div class="genre">'+g.genre+'</div><button class="'+(added?'added':'')+'" onclick="toggle(\''+g.id+'\')">'+(added?'✓':'Tambah')+'</button></div>';
     grid.appendChild(card);
-    // store urls for fallback
-    const img = card.querySelector('img');
-    img.dataset.urls = JSON.stringify(coverUrls);
-    img.dataset.idx = "0";
   });
-  // pagination
-  const pagin = document.getElementById('pagin');
-  pagin.innerHTML='';
-  for(let i=1;i<=totalPages;i++){
-    if(totalPages>10 && i>5 && i<totalPages-2 && Math.abs(i-currentPage)>2) continue;
-    const b=document.createElement('button');
-    b.textContent=i;
-    if(i===currentPage) b.className='active';
-    b.onclick=()=>{currentPage=i;render();window.scrollTo(0,300);};
-    pagin.appendChild(b);
-  }
-  updateFab();
-}
-
-function nextCover(img, id){
-  const urls = JSON.parse(img.dataset.urls);
-  let idx = parseInt(img.dataset.idx)+1;
-  if(idx < urls.length){
-    img.dataset.idx = idx;
-    img.src = urls[idx];
-  }else{
-    // last fallback: show placeholder with title
-    img.style.display='none';
-    const wrap = img.parentElement;
-    if(!wrap.querySelector('.no-cover')){
-      const div=document.createElement('div');
-      div.className='no-cover';
-      div.style.cssText='color:#555;font-size:11px;text-align:center;padding:20px';
-      div.textContent='Belum ada cover: upload cover/'+id+'.jpg ke GitHub biar tepat!';
-      wrap.appendChild(div);
+  document.getElementById('show').textContent=filtered.length;
+  const pg=document.getElementById('pages');
+  pg.innerHTML='';
+  if(total>1){
+    for(let i=1;i<=total;i++){
+      const b=document.createElement('button');
+      b.textContent=i;
+      if(i===page) b.className='active';
+      b.onclick=()=>{page=i;render();window.scrollTo(0,150);};
+      pg.appendChild(b);
     }
   }
+  document.getElementById('fab').textContent=order.length;
+  document.getElementById('cnt').textContent=order.length;
 }
-
-function addOrder(id){
-  const game = allGames.find(g=>g.id===id);
-  if(!game) return;
-  if(!order.find(o=>o.id===id)){
-    order.push(game);
-  }else{
-    order = order.filter(o=>o.id!==id);
-  }
-  localStorage.setItem('ali_order', JSON.stringify(order));
-  render();
-  renderDrawer();
+function toggle(id){
+  const g=DATA.find(x=>x.id===id);
+  const idx=order.findIndex(o=>o.id===id);
+  if(idx>=0) order.splice(idx,1); else order.push(g);
+  localStorage.setItem('ali404',JSON.stringify(order));
+  render(); renderList();
 }
-
-function renderDrawer(){
-  const list = document.getElementById('drawerList');
-  list.innerHTML='';
+function renderList(){
+  const l=document.getElementById('list');
+  l.innerHTML='';
   order.forEach(o=>{
-    const div=document.createElement('div');
-    div.className='drawer-item';
-    div.innerHTML=`<span><b>${o.id}</b> - ${o.title}</span><button onclick="addOrder('${o.id}')" style="background:#222;color:#fff;border:0;padding:2px 6px;border-radius:4px;cursor:pointer">✕</button>`;
-    list.appendChild(div);
+    const d=document.createElement('div');
+    d.style.cssText='background:#1a1a24;padding:8px;border-radius:8px;font-size:11px;display:flex;justify-content:space-between;gap:6px';
+    d.innerHTML='<span><b>'+o.id+'</b> '+o.title+'</span><button onclick="toggle(\''+o.id+'\')" style="background:#222;color:#fff;border:0;padding:3px 7px;border-radius:4px">x</button>';
+    l.appendChild(d);
   });
-  document.getElementById('orderCount').textContent=order.length;
-  document.getElementById('fabCount').textContent=order.length;
-  const text = `Halo Ali Games%0AJl. A. Yani No.238 Jaya Plaza%0A%0AOrder List PS3:%0A` + order.map(o=>`- ${o.id} - ${o.title}`).join('%0A') + `%0A%0ATotal: ${order.length} game%0A%0ATerima kasih`;
-  document.getElementById('waLink').href = `https://wa.me/62895708629977?text=${text}`;
+  const txt='Halo Ali Games%0AOrder:%0A'+order.map(o=>'- '+o.id+' - '+o.title).join('%0A');
+  document.getElementById('wa').href='https://wa.me/62895708629977?text='+txt;
 }
-
-function toggleDrawer(){
-  document.getElementById('orderDrawer').classList.toggle('open');
-  renderDrawer();
-}
-function clearOrder(){order=[];localStorage.setItem('ali_order','[]');render();renderDrawer();}
-function copyList(){
-  const txt = order.map(o=>`${o.id} - ${o.title}`).join('\n');
-  navigator.clipboard.writeText(txt);
-  alert('List tercopy!');
-}
-
-document.getElementById('search').addEventListener('input', applyFilter);
-document.getElementById('genre').addEventListener('change', applyFilter);
-document.getElementById('perPage').addEventListener('change', applyFilter);
-
-loadGames();
+document.getElementById('q').addEventListener('input',filter);
+document.getElementById('genre').addEventListener('change',filter);
+document.getElementById('per').addEventListener('change',filter);
+init();
+renderList();
 </script>
 </body>
 </html>
