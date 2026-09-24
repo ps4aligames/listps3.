@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ali Games - List PS3 404 Game</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#07070b;color:#fff;font-family:system-ui,sans-serif}
+.hero{width:100%;height:320px;overflow:hidden;position:relative;background:#000}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.1) 100%);display:flex;align-items:center;padding:0 24px}
+.hero-text h1{font-size:36px;font-weight:900;letter-spacing:1px;color:#9aa0a6;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+.hero-text p{color:#7a7f85;font-size:14px;margin-top:6px}
+.topbar{background:#12121a;border-bottom:1px solid #222;padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font-size:13px}
+.topbar a{background:#25D366;color:#000;font-weight:800;padding:8px 14px;border-radius:8px;text-decoration:none}
+.controls{padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;background:#0f0f14;position:sticky;top:0;z-index:10;border-bottom:1px solid #222}
+.controls input{flex:1;min-width:180px;background:#1a1a24;border:1px solid #333;color:#fff;padding:10px 12px;border-radius:8px}
+.controls select{background:#1a1a24;border:1px solid #333;color:#fff;padding:10px;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:16px}
+.card{background:#12121a;border:1px solid #23232f;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.cover-wrap{aspect-ratio:3/4;background:#0a0a0f;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover-wrap img{width:100%;height:100%;object-fit:contain;background:#0a0a0f}
+.badge-id{position:absolute;top:6px;left:6px;background:rgba(59,130,246,0.9);color:#fff;font-size:10px;font-family:monospace;padding:3px 6px;border-radius:4px}
+.info{padding:8px}
+.info h3{font-size:12px;line-height:1.3;height:32px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.info .genre{font-size:10px;color:#888;margin-top:4px}
+.info button{margin-top:8px;width:100%;background:#fff;color:#000;font-weight:700;border:0;padding:8px;border-radius:8px;cursor:pointer;font-size:12px}
+.info button.added{background:#25D366}
+.pagin{display:flex;gap:6px;justify-content:center;padding:12px;flex-wrap:wrap}
+.pagin button{background:#1a1a24;border:1px solid #333;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+.pagin button.active{background:#fff;color:#000}
+#orderDrawer{position:fixed;right:0;top:0;bottom:0;width:360px;max-width:90vw;background:#11111a;border-left:1px solid #333;transform:translateX(100%);transition:0.3s;z-index:50;display:flex;flex-direction:column}
+#orderDrawer.open{transform:translateX(0)}
+.drawer-head{padding:16px;border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center}
+.drawer-list{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.drawer-item{background:#1a1a24;border:1px solid #2a2a3a;padding:8px;border-radius:8px;font-size:12px;display:flex;justify-content:space-between;gap:8px}
+.drawer-foot{padding:12px;border-top:1px solid #222;display:flex;flex-direction:column;gap:8px}
+.drawer-foot a, .drawer-foot button{padding:12px;border-radius:8px;text-align:center;font-weight:800;text-decoration:none;border:0;cursor:pointer}
+.btn-wa{background:#25D366;color:#000}
+.btn-copy{background:#333;color:#fff}
+.btn-clear{background:#1a1a24;color:#888;border:1px solid #333 !important}
+.fab{position:fixed;bottom:16px;right:16px;background:#25D366;color:#000;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.4);z-index:40}
+@media(max-width:600px){.hero{height:200px}.hero-text h1{font-size:24px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<img src="banner.jpg" onerror="this.src='foto-asli-stik.jpg'" alt="Ali Games Banner">
+<div class="hero-overlay"><div class="hero-text"><h1>ALI GAMES</h1><p>Jl. A. Yani No.238 Jaya Plaza Lantai Dasar Blok I No.10 Bandung • 404 Game PS3</p></div></div>
+</div>
+
+<div class="topbar">
+<div>📍 ALI GAMES - Jaya Plaza • WA 0895708629977 • Foto Cover Tepat 100% Sesuai Judul</div>
+<a href="https://wa.me/62895708629977" target="_blank">Chat WA</a>
+</div>
+
+<div class="controls">
+<input id="search" placeholder="Cari ID / Judul... contoh BLUS-30385 atau FIFA 10">
+<select id="genre"><option value="ALL">ALL GENRE</option></select>
+<select id="perPage"><option value="48">48 / halaman</option><option value="96">96</option><option value="200">200</option><option value="404">Semua 404</option></select>
+</div>
+
+<div id="grid" class="grid"></div>
+<div id="pagin" class="pagin"></div>
+
+<div class="fab" onclick="toggleDrawer()">🛒<span id="fabCount" style="font-size:12px;margin-left:2px">0</span></div>
+
+<div id="orderDrawer">
+<div class="drawer-head"><b>Order List (<span id="orderCount">0</span>)</b><button onclick="toggleDrawer()" style="background:#222;color:#fff;border:0;padding:6px 10px;border-radius:6px;cursor:pointer">✕</button></div>
+<div id="drawerList" class="drawer-list"></div>
+<div class="drawer-foot">
+<a id="waLink" class="btn-wa" href="#" target="_blank">Kirim Order ke WA</a>
+<button class="btn-copy" onclick="copyList()">Copy List</button>
+<button class="btn-clear" onclick="clearOrder()">Hapus Semua</button>
+<div style="font-size:11px;color:#666;line-height:1.4">Cara biar foto tepat: Foto cover BD fisik → rename jadi ID.jpg (contoh BLUS-30385.jpg) → upload ke folder <b>cover/</b> di GitHub → otomatis tepat!</div>
+</div>
+</div>
+
+<script>
+// Load games from games.json
+let allGames = [];
+let filtered = [];
+let currentPage = 1;
+let order = JSON.parse(localStorage.getItem('ali_order')||'[]');
+
+async function loadGames(){
+  try{
+    const res = await fetch('games.json');
+    allGames = await res.json();
+  }catch(e){
+    // fallback embedded sample if fetch fails
+    allGames = [{"id":"BLUS-30385","title":"FIFA 10","genre":"Olahraga"},{"id":"BCAS-20066","title":"Killzone 2","genre":"Shooter"}];
+  }
+  // genres
+  const genres = [...new Set(allGames.map(g=>g.genre))].sort();
+  const sel = document.getElementById('genre');
+  genres.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);});
+  applyFilter();
+}
+
+function getCoverUrls(id){
+  // PRIORITAS: folder lokal kamu yang ada di repo (cover singular) - INI KUNCI BIAR TEPAT 100%
+  const idNoDash = id.replace('-','');
+  const idUnderscore = id.replace('-','_');
+  return [
+    `cover/${id}.jpg`,
+    `cover/${id}.JPG`,
+    `cover/${idNoDash}.jpg`,
+    `covers/${id}.jpg`,
+    `covers/${idNoDash}.jpg`,
+    // fallback CDN (kalau belum upload foto sendiri, baru pakai internet - tapi sering ngaco, jadi upload foto fisik lebih bagus)
+    `https://cdn.jsdelivr.net/gh/st-alves/ps3-covers@main/covers/default/${id}.jpg`,
+    `https://cdn.jsdelivr.net/gh/aldostools/Resources@main/COV/${idNoDash}.JPG`
+  ];
+}
+
+function applyFilter(){
+  const q = document.getElementById('search').value.toLowerCase();
+  const g = document.getElementById('genre').value;
+  filtered = allGames.filter(game=>{
+    const matchQ = !q || game.id.toLowerCase().includes(q) || game.title.toLowerCase().includes(q);
+    const matchG = g==='ALL' || game.genre===g;
+    return matchQ && matchG;
+  });
+  currentPage = 1;
+  render();
+}
+
+function render(){
+  const per = parseInt(document.getElementById('perPage').value);
+  const totalPages = Math.ceil(filtered.length/per);
+  const start = (currentPage-1)*per;
+  const pageGames = filtered.slice(start, start+per);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  pageGames.forEach(game=>{
+    const card = document.createElement('div');
+    card.className='card';
+    const coverUrls = getCoverUrls(game.id);
+    const imgId = `img-${game.id}`;
+    card.innerHTML = `
+      <div class="cover-wrap">
+        <span class="badge-id">${game.id}</span>
+        <img id="${imgId}" src="${coverUrls[0]}" alt="${game.title}" loading="lazy" onerror="nextCover(this, '${game.id}')">
+      </div>
+      <div class="info">
+        <h3>${game.title}</h3>
+        <div class="genre">${game.genre}</div>
+        <button onclick="addOrder('${game.id}')" id="btn-${game.id}">${order.find(o=>o.id===game.id)?'✓ Ditambahkan':'Tambah Order'}</button>
+      </div>
+    `;
+    grid.appendChild(card);
+    // store urls for fallback
+    const img = card.querySelector('img');
+    img.dataset.urls = JSON.stringify(coverUrls);
+    img.dataset.idx = "0";
+  });
+  // pagination
+  const pagin = document.getElementById('pagin');
+  pagin.innerHTML='';
+  for(let i=1;i<=totalPages;i++){
+    if(totalPages>10 && i>5 && i<totalPages-2 && Math.abs(i-currentPage)>2) continue;
+    const b=document.createElement('button');
+    b.textContent=i;
+    if(i===currentPage) b.className='active';
+    b.onclick=()=>{currentPage=i;render();window.scrollTo(0,300);};
+    pagin.appendChild(b);
+  }
+  updateFab();
+}
+
+function nextCover(img, id){
+  const urls = JSON.parse(img.dataset.urls);
+  let idx = parseInt(img.dataset.idx)+1;
+  if(idx < urls.length){
+    img.dataset.idx = idx;
+    img.src = urls[idx];
+  }else{
+    // last fallback: show placeholder with title
+    img.style.display='none';
+    const wrap = img.parentElement;
+    if(!wrap.querySelector('.no-cover')){
+      const div=document.createElement('div');
+      div.className='no-cover';
+      div.style.cssText='color:#555;font-size:11px;text-align:center;padding:20px';
+      div.textContent='Belum ada cover: upload cover/'+id+'.jpg ke GitHub biar tepat!';
+      wrap.appendChild(div);
+    }
+  }
+}
+
+function addOrder(id){
+  const game = allGames.find(g=>g.id===id);
+  if(!game) return;
+  if(!order.find(o=>o.id===id)){
+    order.push(game);
+  }else{
+    order = order.filter(o=>o.id!==id);
+  }
+  localStorage.setItem('ali_order', JSON.stringify(order));
+  render();
+  renderDrawer();
+}
+
+function renderDrawer(){
+  const list = document.getElementById('drawerList');
+  list.innerHTML='';
+  order.forEach(o=>{
+    const div=document.createElement('div');
+    div.className='drawer-item';
+    div.innerHTML=`<span><b>${o.id}</b> - ${o.title}</span><button onclick="addOrder('${o.id}')" style="background:#222;color:#fff;border:0;padding:2px 6px;border-radius:4px;cursor:pointer">✕</button>`;
+    list.appendChild(div);
+  });
+  document.getElementById('orderCount').textContent=order.length;
+  document.getElementById('fabCount').textContent=order.length;
+  const text = `Halo Ali Games%0AJl. A. Yani No.238 Jaya Plaza%0A%0AOrder List PS3:%0A` + order.map(o=>`- ${o.id} - ${o.title}`).join('%0A') + `%0A%0ATotal: ${order.length} game%0A%0ATerima kasih`;
+  document.getElementById('waLink').href = `https://wa.me/62895708629977?text=${text}`;
+}
+
+function toggleDrawer(){
+  document.getElementById('orderDrawer').classList.toggle('open');
+  renderDrawer();
+}
+function clearOrder(){order=[];localStorage.setItem('ali_order','[]');render();renderDrawer();}
+function copyList(){
+  const txt = order.map(o=>`${o.id} - ${o.title}`).join('\n');
+  navigator.clipboard.writeText(txt);
+  alert('List tercopy!');
+}
+
+document.getElementById('search').addEventListener('input', applyFilter);
+document.getElementById('genre').addEventListener('change', applyFilter);
+document.getElementById('perPage').addEventListener('change', applyFilter);
+
+loadGames();
+</script>
+</body>
+</html>
